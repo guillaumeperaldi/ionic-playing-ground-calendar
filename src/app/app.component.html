@@ -10,15 +10,15 @@
     
   <div class="grid-item">
   <h2>Calendrier basic</h2>
-  <app-calendar></app-calendar>
-</div>
+    <app-calendar></app-calendar>
+  </div>
     
     
     
     
     
     
-    <div class="grid-item">
+    <div *ngIf="displayIonicCalendar" class="grid-item">
       <h2>Readonly</h2>
       <ion-datetime readonly="true"></ion-datetime>
     </div>
