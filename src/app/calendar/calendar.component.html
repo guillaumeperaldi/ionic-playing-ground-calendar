@@ -1,1 +1,60 @@
-<p>CalenDar</p>
+<div class="basic-calendar">
+  <div class="calendar-card">
+    <div class="container">
+      <h2 id="left" class="calendar-title">{{ title }}</h2>
+    </div>
+    <div>
+      <div class="calendar-nav">
+         
+          <div
+             class="calendar-left-nav"
+            (click)="leftMonth()"
+          >
+            <
+          </div>
+        
+        <div class="calendar-current-month">
+          <h3>{{ currMonth }} {{ year }}</h3>
+        </div>
+        
+          <div
+          class="calendar-right-nav"
+            (click)="rightMonth()"
+          >
+            >
+          </div>
+        
+      </div>
+      <div class="calendar" id="calendar-box">
+        <div class="calendar-week-days">
+          <div>S</div>
+          <div>M</div>
+          <div>T</div>
+          <div>W</div>
+          <div>T</div>
+          <div>F</div>
+          <div>S</div>
+        </div>
+        <div class="calendar-days">
+          <div *ngFor="let in of counter(grids); let i = index">
+            <div
+              class="calendar-day calendar-out"
+              *ngIf="i < firstDay; else regdays"
+            ></div>
+            <ng-template #regdays>
+              <div
+                class="calendar-day current-day"
+                *ngIf="i - firstDay + 1 === currDay"
+              >
+                {{ i - firstDay + 1 }}
+              </div>
+              <div class="calendar-day" *ngIf="i - firstDay + 1 !== currDay">
+                {{ i - firstDay + 1 }}
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

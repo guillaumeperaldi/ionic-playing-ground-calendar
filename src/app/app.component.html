@@ -6,30 +6,25 @@
   </ion-header>
 
   <ion-content class="ion-padding">
-    
-    
-  <div class="grid-item">
-  <h2>Calendrier basic</h2>
-    <app-calendar></app-calendar>
-  </div>
-    
-    
-    
-    
-    
-    
+    <div lot="fixed" *ngIf="displayIonicCalendar">
+      <h1>
+        <span class="ion-margin"> Title </span>
+      </h1>
+      <br />
+      <br />
+      <br />
+    </div>
+    <div class="grid-item">
+      <h2>Calendrier basic</h2>
+      <app-calendar></app-calendar>
+    </div>
+
     <div *ngIf="displayIonicCalendar" class="grid-item">
       <h2>Readonly</h2>
       <ion-datetime readonly="true"></ion-datetime>
     </div>
 
-    <h1 slot="fixed">
-      <span class="ion-margin"> Title </span>
-    </h1>
-    <br />
-    <br />
-    <br />
-    <ion-grid>
+    <ion-grid *ngIf="displayIonicCalendar">
       <ion-row class="ion-justify-content-center">
         <ion-col size-xs="0" size-sm="0" size-md="2" size-lg="3" size-xl="4">
         </ion-col>
